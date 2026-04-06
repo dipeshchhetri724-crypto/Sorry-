@@ -1,0 +1,194 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorry Deepshika ❤️</title><style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  overflow-x: hidden;
+  color: white;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  color: #ff4d6d;
+  font-size: 2.5rem;
+}
+
+.card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  max-width: 500px;
+  margin: auto;
+}
+
+.typing {
+  border-right: 3px solid #ff4d6d;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 4s steps(40, end) forwards, blink 0.7s infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+.buttons {
+  margin-top: 20px;
+  position: relative;
+  height: 120px;
+}
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  position: absolute;
+}
+
+.yes { background: #ff4d6d; color: white; left: 30%; }
+.no { background: #999; color: white; left: 55%; }
+
+.gallery img {
+  width: 120px;
+  height: 120px;
+  border-radius: 15px;
+  margin: 10px;
+  object-fit: cover;
+}
+
+video {
+  width: 90%;
+  max-width: 500px;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+
+.music-player {
+  margin-top: 20px;
+}
+
+/* stars */
+.star {
+  position: fixed;
+  width: 2px;
+  height: 2px;
+  background: white;
+  animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.2 }
+  to { opacity: 1 }
+}
+
+/* hearts */
+.heart {
+  position: fixed;
+  bottom: -10px;
+  font-size: 18px;
+  animation: floatUp 6s linear infinite;
+  color: #ff4d6d;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+.bigMessage {
+  display: none;
+  font-size: 2rem;
+  color: #ff4d6d;
+  margin-top: 20px;
+}
+
+</style></head><body><div class="container">
+  <h1>I'm Sorry Deepshika ❤️</h1>  <div class="card">
+    <p class="typing">Deepshika... I'm really sorry. You mean everything to me<br> ❤
+     Please 🙏 forgive me.️</p><div class="buttons">
+  <button class="yes" onclick="yesClick()">Yes ❤️</button>
+  <button class="no" onmouseover="moveNo(this)">No 😢</button>
+</div>
+
+<div class="bigMessage" id="loveMsg">
+  I LOVE YOU DEEPSHIKA ❤️
+</div>
+
+  </div>  <!-- MUSIC SECTION -->  <div class="music-player">
+    <h2> music 🎶</h2>
+    <audio controls loop>
+      <source src="you.mp3" type="audio/mpeg">
+      Your browser does not support audio.
+    </audio>
+  </div>  <!-- PHOTO SECTION -->  <div class="gallery">
+    <h2> Queen's Memory 👑💖 📸</h2>
+    <img src="1.jpeg">
+    <img src="2.webp">
+    <img src="3.webp">
+  </div>
+     <!-- VIDEO SECTION (YOUR OWN VIDEOS) --><div class="video">
+    <h2>For You 💖</h2>
+    <video controls>
+    <source src="5.mp4" type="video/mp4">
+    </video>
+    <video controls>
+    <source src="4.mp4" type="video/mp4">
+    </video>
+    <video controls>
+    <source src="6.mp4" type="video/mp4">
+    </video>
+    </div>
+  </div></div><script>
+function yesClick() {
+  document.getElementById('loveMsg').style.display = 'block';
+}
+
+function moveNo(btn) {
+  const container = document.querySelector('.buttons');
+  const maxX = container.clientWidth - btn.offsetWidth;
+  const maxY = container.clientHeight - btn.offsetHeight;
+
+  btn.style.left = Math.random() * maxX + 'px';
+  btn.style.top = Math.random() * maxY + 'px';
+}
+
+// stars generator
+for (let i = 0; i < 120; i++) {
+  let star = document.createElement('div');
+  star.className = 'star';
+  star.style.top = Math.random() * 100 + 'vh';
+  star.style.left = Math.random() * 100 + 'vw';
+  document.body.appendChild(star);
+}
+
+// hearts with name inside
+setInterval(() => {
+  let heart = document.createElement('div');
+  heart.className = 'heart';
+  heart.innerHTML = '💖 Sorry Deepsu ❤️';
+  heart.style.left = Math.random() * 100 + 'vw';
+  heart.style.fontSize = (Math.random() * 10 + 12) + 'px';
+
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
+}, 200);
+</script></body>
+</html>
